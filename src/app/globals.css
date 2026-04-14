@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
+    background: url('/rtcae_bg.png') no-repeat top center;
+    background-size: 100% auto;
+    background-color: #a5bad1;
+    background-attachment: fixed;  /* ✅ fixed for desktop */
+}
+
+@media (max-width: 768px) {
+    body {
+        /* Remove the image, use gradient instead */
+        background: linear-gradient(135deg, #81d8e4, #a5bad1);
+        background-size: auto;
+        background-attachment: fixed;  /* ✅ fixed for mobile as well */
+    }
+}
+
+a,
+.highlight {
+    color: #84858C;
+}
+
+a:hover {
+    color: #6c6d77;
+}
