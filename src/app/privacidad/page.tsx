@@ -2,16 +2,16 @@ export default function PrivacidadPage() {
     return (
         <div className="max-w-4xl mx-auto px-6 py-12 text-[#342829]">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">POLÍTICA DE PROTECCIÓN DE DATOS</h1>
-            <p className="text-xl mb-8 text-[#84858C]">RESUELVE TU CONTRATO LTDA</p>
-            <p className="mb-8 italic">Fecha de entrada en vigor: Enero 2025</p>
+            <p className="text-xl mb-8 text-[#84858C]">RESUELVE TU CAE LTDA</p>
+            <p className="mb-8 italic">Fecha de entrada en vigor: Abril 2026</p>
 
             <div className="space-y-6">
                 <p>
-                    Esta Política de Privacidad tiene como objetivo informarle cómo Resuelve Tu Contrato Limitada (en adelante, «la Empresa», «nosotros» o «nuestro») recopila, utiliza, protege y comparte su información personal. Nos comprometemos a garantizar la privacidad y seguridad de sus datos, cumpliendo con la normativa chilena, incluyendo la Ley N° 19.628 sobre Protección de Datos Personales y la Ley N° 21.719 que crea la Agencia de Protección de Datos Personales.
+                    Esta Política de Privacidad tiene como objetivo informarle cómo Resuelve Tu CAE Limitada (en adelante, «la Empresa», «nosotros» o «nuestro») recopila, utiliza, protege y comparte su información personal. Nos comprometemos a garantizar la privacidad y seguridad de sus datos, cumpliendo con la normativa chilena, incluyendo la Ley N° 19.628 sobre Protección de Datos Personales y la Ley N° 21.719 que crea la Agencia de Protección de Datos Personales.
                 </p>
 
                 <h2 className="text-2xl font-bold mt-8 mb-4">NUESTROS VALORES EN PROTECCIÓN DE DATOS</h2>
-                <p>En Resuelve Tu Contrato, la confianza es fundamental. Nos regimos por los siguientes principios:</p>
+                <p>En Resuelve Tu CAE, la confianza es fundamental. Nos regimos por los siguientes principios:</p>
                 <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Licitud, Lealtad y Transparencia:</strong> Solo recopilamos datos necesarios y los tratamos de manera clara y honesta.</li>
                     <li><strong>Finalidad:</strong> Usamos sus datos exclusivamente para los fines establecidos en esta política.</li>
@@ -87,8 +87,8 @@ export default function PrivacidadPage() {
                 <p>Los usuarios tienen derecho a acceder, rectificar, eliminar o limitar el tratamiento de sus datos, oponerse a su uso y solicitar la portabilidad de su información.</p>
                 <p>Para ejercer estos derechos, puede contactarnos a través de:</p>
                 <ul className="list-none pl-6 space-y-1">
-                    <li>📧 Correo electrónico: <a href="mailto:contacto@resuelvetucontrato.com" className="text-[#84858C] hover:underline">contacto@resuelvetucontrato.com</a></li>
-                    <li>📞 Teléfono: +56 9 2795 7560</li>
+                    <li>📧 Correo electrónico: <a href="mailto:contacto@resuelvetucae.com" className="text-[#84858C] hover:underline">contacto@resuelvetucae.com</a></li>
+                    <li>📞 Teléfono: +56 9 9076 4586</li>
                 </ul>
                 <p>Nuestro equipo responderá su solicitud dentro de los 15 días hábiles siguientes.</p>
 
@@ -101,11 +101,11 @@ export default function PrivacidadPage() {
                 <h2 className="text-2xl font-bold mt-8 mb-4">CONTACTO</h2>
                 <p>Si tiene preguntas o inquietudes sobre esta política o el tratamiento de sus datos, puede contactar a nuestro Encargado de Protección de Datos (DPO) a través de:</p>
                 <ul className="list-none pl-6 space-y-1">
-                    <li>📧 Correo electrónico: <a href="mailto:contacto@resuelvetucontrato.com" className="text-[#84858C] hover:underline">contacto@resuelvetucontrato.com</a></li>
-                    <li>📞 Teléfono: +56 9 2795 7560</li>
+                    <li>📧 Correo electrónico: <a href="mailto:contacto@resuelvetucae.com" className="text-[#84858C] hover:underline">contacto@resuelvetucae.com</a></li>
+                    <li>📞 Teléfono: +56 9 9076 4586</li>
                     <li>📍 Dirección: Av Vitacura 2736, Piso 4, Las Condes</li>
                 </ul>
-                <p className="mt-4">Resuelve Tu Contrato se compromete a proteger su privacidad y garantizar el tratamiento seguro y transparente de sus datos personales.</p>
+                <p className="mt-4">Resuelve Tu CAE se compromete a proteger su privacidad y garantizar el tratamiento seguro y transparente de sus datos personales.</p>
                 <p>Si desea presentar una solicitud relacionada con el ejercicio de sus derechos de protección de datos, puede hacerlo mediante el siguiente formulario. Nos comprometemos a responder en los plazos establecidos por la normativa vigente.</p>
             </div>
         </div>

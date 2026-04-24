@@ -17,4 +17,54 @@ model Client {
   problemStatus String // Victim of Bank Fraud, Real Estate, etc.
   urgent      Boolean  @default(false)
   createdAt   DateTime @default(now())
+  appointments   Appointment[]   // new
+}
+
+
+// slots
+model AvailableSlot {
+  id           String    @id @default(uuid())
+  dayOfWeek    Int       // 0 = Sunday, 1 = Monday, ...
+  startTime    String    // "09:00"
+  endTime      String    // "09:45"
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  specificDate DateTime? // if not null, overrides dayOfWeek
+}
+
+// appointment
+model Appointment {
+  id            String   @id @default(cuid())
+  clientId      String
+  client        Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  dateTime      DateTime
+  duration      Int      @default(45)
+  status        String   @default("PENDING")   // PENDING, CONFIRMED, CANCELLED
+  paymentStatus String   @default("PENDING")   // PENDING, PAID, FAILED
+  amount        Int?      // in CLP
+  transactionId String?   // Webpay authorization code
+  googleEventId String?    // Google Calendar event ID
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  payments Payment[]
+}
+
+// payment
+model Payment {
+  id                 String   @id @default(cuid())
+  appointmentId      String
+  buyOrder           String   @unique
+  amount             Int      // in CLP
+  status             String   @default("PENDING")  // PENDING, PAID, FAILED
+  token              String?  @unique
+  authorizationCode  String?
+  paymentTypeCode    String?
+  responseCode       Int?
+  cardNumber         String?
+  transactionDate    DateTime?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  appointment Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
 }

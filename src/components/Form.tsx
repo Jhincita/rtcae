@@ -79,7 +79,7 @@ export default function IntakeForm() {
     return (
         <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-md w-full max-w-xl space-y-5">
             <h1 className="text-3xl font-semibold text-center text-black">
-                Obtén asesoría gratuita completando el formulario.
+                Obtén asesoría completando el formulario.
             </h1>
 
             <input

@@ -1,8 +1,10 @@
 // app/api/clients/route.ts
 import { PrismaClient } from '@prisma/client'
 import { NextResponse } from 'next/server'
+import { Resend } from 'resend'
 
 const prisma = new PrismaClient()
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
     try {
@@ -21,6 +23,7 @@ export async function POST(request: Request) {
             )
         }
 
+        // 1. Save to database
         const client = await prisma.client.create({
             data: {
                 name: body.name,
@@ -30,6 +33,28 @@ export async function POST(request: Request) {
                 urgent: body.urgent || false,
             }
         })
+
+        // 2. Send email notification to site owners (non‑blocking)
+        try {
+            await resend.emails.send({
+                from: process.env.EMAIL_FROM!,
+                to: process.env.EMAIL_TO!,
+                subject: `Nuevo cliente: ${body.name}`,
+                html: `
+                    <h2>Nuevo formulario de contacto</h2>
+                    <p><strong>Nombre:</strong> ${body.name}</p>
+                    <p><strong>Email:</strong> ${body.email}</p>
+                    <p><strong>Teléfono:</strong> ${body.phone}</p>
+                    <p><strong>Estado del problema:</strong> ${body.problemStatus}</p>
+                    <p><strong>ID en sistema:</strong> ${client.id}</p>
+                    <hr />
+                    <p>Responder a: ${body.email}</p>
+                `,
+            })
+        } catch (emailError) {
+            // Log email error but don't fail the whole request
+            console.error('Failed to send email notification:', emailError)
+        }
 
         return NextResponse.json({
             success: true,
@@ -54,7 +79,7 @@ export async function POST(request: Request) {
     }
 }
 
-// GET endpoint igual (no necesita cambios)
+// GET endpoint – unchanged
 export async function GET(request: Request) {
     try {
         const { searchParams } = new URL(request.url)
