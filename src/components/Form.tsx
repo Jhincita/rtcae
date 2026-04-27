@@ -68,7 +68,7 @@ export default function IntakeForm() {
                 return;
             }
 
-            window.location.href = "/gracias";
+            window.location.href = `/agendar?clientId=${data.client.id}`;
         } catch (error) {
             console.error("Network error:", error);
             alert("Something went wrong. Please try again.");
